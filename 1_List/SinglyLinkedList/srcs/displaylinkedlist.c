@@ -11,9 +11,7 @@ void displayLinkedList(LinkedList *pList)
     pNode = pList->headerNode.pLink;
     while (pNode)
 	{
-		printf("[%d]: %d\n", i++, pNode->data);
+		printf("singlylinkedlist[%d]: %d\n", i++, pNode->data);
 		pNode = pNode->pLink;
 	}
-    free(pNode);
-	printf("\n");
 }
