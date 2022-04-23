@@ -47,7 +47,7 @@ FASNode* peekFAS(FixedArrayStack* pStack) {
 }
 
 void deleteFixedArrayStack(FixedArrayStack* pStack) {
-    if (isFixedArrayStackEmpty(pStack) == FALSE) free(pStack->pElements);
+    free(pStack->pElements);
     free(pStack);
 }
 

@@ -13,12 +13,12 @@ void testSpace_DynamicArrayStack(char *argv) {
         free(nptr);
     }
     displayDynamicArrayStack(das);
-    // for (size_t i = 0; i < strlen(argv) / 2; i++) {
-    //     DASNode *nptr = popDAS(das);
-    //     displayDynamicArrayStack(das);
-    //     printf("popped_value = %c\n", nptr->data);
-    //     free(nptr);
-    // }
+    for (size_t i = 0; i < strlen(argv) / 2; i++) {
+        DASNode *nptr = popDAS(das);
+        displayDynamicArrayStack(das);
+        printf("popped_value = %c\n", nptr->data);
+        free(nptr);
+    }
     deleteDynamicArrayStack(das);
     system("leaks test");
 }
@@ -49,7 +49,7 @@ void testSpace_FixedArrayStack(char *argv) {
     }
     displayFixedArrayStack(fas);
     size_t limit = fas->currentElementCount;
-    for (size_t i = 0; i < limit; i++) {
+    for (size_t i = 0; i < limit - 1; i++) {
         FASNode *nptr = popFAS(fas);
         displayFixedArrayStack(fas);
         printf("popped_value = %c\n", nptr->data);
