@@ -13,7 +13,8 @@
 // }
 
 void testSpace(char *str, bool expected) {
-    printf("inserted input : [%s] | ", str);
+    static int testNumber;
+    printf("testCase No.%d | ", testNumber++);
     bool checker = isClosedBlank((const char *)str, strlen(str));
     printf("result : [%s] | ", (checker == true) ? "true" : "false");
     printf("is the answer correct? : [%s ]\n", (checker == expected) ? "✅ :)" : "❌ :(");
