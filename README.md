@@ -4,7 +4,7 @@
 
 ### 📎 자료 구조 공부 반 진행 목록
 |모임 횟수|날짜|공부 할 주제|과제|With|
-|:---:|:---:|:---|:---|---:|
+|:---:|:----:|:---|:---|---:|
 |01|04-19|[배열, 리스트](https://github.com/42-DataStructure-2022-2-3/yeblee/tree/main/1_List)|배열, linked 리스트 구현하기|[tkang](https://github.com/42-DataStructure-2022-2-3/tkang)|
 |02|04-22|리스트의 구현과 활용|circular, double linked list구현하기 linked list 역순, 다항식의 덧셈|tkang|
 |03|04-26|[스택](https://github.com/42-DataStructure-2022-2-3/yeblee/tree/main/2_Stack)|stack array와 linked list로 구현하기|[jekim](https://github.com/42-DataStructure-2022-2-3/jekim)|
