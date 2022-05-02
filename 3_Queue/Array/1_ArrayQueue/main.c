@@ -1,4 +1,4 @@
-#include "../include/arrayqueue.h"
+#include "include/arrayqueue.h"
 
 int main (void) {
     ArrayQueue *pQueue = NULL;
@@ -11,33 +11,31 @@ int main (void) {
         printf("큐 생성 실패");
         return 0;
     }
-    pElement.data = '1';
-    enqueueAQ(pQueue, pElement);
-    pElement.data = '2';
-    enqueueAQ(pQueue, pElement);
-    pElement.data = '3';
-    enqueueAQ(pQueue, pElement);
-    pElement.data = '4';
-    enqueueAQ(pQueue, pElement);
-    // pElement.data = '5';
+    for (char i = 'A'; i <= 'D'; i++) {
+        pElement.data = i;
+        enqueueAQ(pQueue, pElement);
+    }
+    // pElement.data = 'E';
     // enqueueAQ(pQueue, pElement);
+    displayArrayQueue(pQueue);
+    printf("\n====================================================================\n");
+    
+    printf("\ndequeueAQ : %c\n", dequeueAQ(pQueue)->data);
+    displayArrayQueue(pQueue);
+    printf("\n====================================================================\n");
+
+    printf("peakAQ : %c\n", peekAQ(pQueue)->data);
+    displayArrayQueue(pQueue);
+    printf("\n====================================================================\n");
+    
+    pElement.data = 'F';
+    enqueueAQ(pQueue, pElement);
     displayArrayQueue(pQueue);
     printf("\n====================================================================\n");
     
     pNode = dequeueAQ(pQueue);
     printf("\ndequeueAQ : %c\n", pNode->data);
     free(pNode);
-    displayArrayQueue(pQueue);
-    printf("\n====================================================================\n");
-
-    pNode = peekAQ(pQueue);
-    printf("peakAQ : %c\n", pNode->data);
-    free(pNode);
-    displayArrayQueue(pQueue);
-    printf("\n====================================================================\n");
-    
-    pElement.data = '6';
-    enqueueAQ(pQueue, pElement);
     displayArrayQueue(pQueue);
     printf("\n====================================================================\n");
     deleteArrayQueue(pQueue);

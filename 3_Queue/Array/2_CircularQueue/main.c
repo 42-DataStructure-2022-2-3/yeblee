@@ -1,4 +1,4 @@
-#include "../include/Circularqueue.h"
+#include "include/Circularqueue.h"
 
 int main (void) {
     CircularQueue *pQueue = NULL;
@@ -11,16 +11,10 @@ int main (void) {
         printf("큐 생성 실패");
         return 0;
     }
-    pElement.data = 'A';
-    enqueueCQ(pQueue, pElement);
-    pElement.data = 'B';
-    enqueueCQ(pQueue, pElement);
-    pElement.data = 'C';
-    enqueueCQ(pQueue, pElement);
-    pElement.data = 'D';
-    enqueueCQ(pQueue, pElement);
-    pElement.data = 'E';
-    enqueueCQ(pQueue, pElement);
+    for (char i = 'A'; i <= 'E'; i++) {
+        pElement.data = i;
+        enqueueCQ(pQueue, pElement);
+    }
     displayCircularQueue(pQueue);
     printf("\n====================================================================\n");
     
