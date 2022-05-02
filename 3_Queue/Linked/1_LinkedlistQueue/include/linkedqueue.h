@@ -8,8 +8,7 @@
 typedef struct LinkedQueueNodeType
 {
 	char data;
-	struct LinkedQueueNodeType* pRLink;
-	struct LinkedQueueNodeType* pLLink;
+	struct LinkedQueueNodeType* pLink;
 	
 } QueueNode;
 
@@ -21,15 +20,14 @@ typedef struct LinkedQueueType
 } LinkedQueue;
 
 LinkedQueue* createLinkedQueue();
-int insertFrontLD(LinkedQueue* pQueue, QueueNode element);
-int insertRearLD(LinkedQueue* pQueue, QueueNode element);
-QueueNode* deleteFrontLD(LinkedQueue* pQueue);
-QueueNode* deleteRearLD(LinkedQueue* pQueue);
-QueueNode* peekFrontLD(LinkedQueue* pQueue);
-QueueNode* peekRearLD(LinkedQueue* pQueue);
+int enqueueLD(LinkedQueue* pQueue, QueueNode element);
+QueueNode* dequeueLD(LinkedQueue* pQueue);
+QueueNode* peekLD(LinkedQueue* pQueue);
 void deleteLinkedQueue(LinkedQueue* pQueue);
 int isLinkedQueueFull(LinkedQueue* pQueue);
 int isLinkedQueueEmpty(LinkedQueue* pQueue);
+
+void displayLinkedQueue(LinkedQueue *pQueue);
 
 #endif //_LINKED_QUEUE_
 
