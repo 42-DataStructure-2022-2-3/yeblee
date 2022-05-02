@@ -19,7 +19,7 @@ int enqueueCQ(CircularQueue* pQueue, CircularQueueNode element) {
     int ret = FALSE;
     if (pQueue != NULL) {
         // 빈 공간이 있을 경우 삽입 가능
-        printf("%d\n", (pQueue->rear+1) % pQueue->maxElementCount);
+        // printf("%d\n", (pQueue->rear+1) % pQueue->maxElementCount);
         if (isCircularQueueFull(pQueue) == FALSE) {
             pQueue->rear = (pQueue->rear+1)%pQueue->maxElementCount;
             pQueue->pElement[pQueue->rear].data = element.data;
@@ -78,14 +78,15 @@ int isCircularQueueEmpty(CircularQueue* pQueue) {
 
 void displayCircularQueue(CircularQueue *pQueue) {
     if (pQueue != NULL) {
-        int i = (pQueue->front + 1)%pQueue->maxElementCount;
+        // int i = (pQueue->front + 1)%pQueue->maxElementCount;
+        int i = pQueue->front;
 
         printf("CircularQueue\nmax count : %d\tcurrent count : %d\n", pQueue->maxElementCount, pQueue->currentElementCount);
         printf("front : %d, rear : %d\n", pQueue->front, pQueue->rear);
-        while (i != pQueue->front) {
+        while (i != pQueue->rear) {
+            i = (i + 1)%pQueue->maxElementCount;
             printf("CircularQueue[%d] = %c\n", i, pQueue->pElement[i].data);
             if (i == pQueue->rear) break;
-            i = (i + 1)%pQueue->maxElementCount;
         }
     }
 }

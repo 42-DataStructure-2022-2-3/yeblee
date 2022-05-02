@@ -6,7 +6,7 @@ int main (void) {
     CircularQueueNode pElement;
 
     // 큐생성
-    pQueue = createCircularQueue(5);
+    pQueue = createCircularQueue(9);
     if (!pQueue) {
         printf("큐 생성 실패");
         return 0;
