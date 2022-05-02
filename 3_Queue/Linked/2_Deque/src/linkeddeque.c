@@ -53,13 +53,10 @@ int insertRearLD(LinkedDeque* pDeque, DequeNode element) {
 DequeNode* deleteFrontLD(LinkedDeque* pDeque) {
     DequeNode *pNode = peekFrontLD(pDeque);
     if (pNode != NULL) {
-        if (pDeque->currentElementCount == 1) {
-            // pDeque->pFrontNode = NULL;
+        if (pDeque->currentElementCount == 1)
             pDeque->pRearNode = NULL;
-        } else {
-            // pDeque->pFrontNode = pNode->pRLink;
+        else
             pDeque->pFrontNode->pLLink = NULL;
-        }
     }
     pDeque->pFrontNode = pNode->pRLink;
     pNode->pRLink = NULL;
@@ -71,13 +68,10 @@ DequeNode* deleteFrontLD(LinkedDeque* pDeque) {
 DequeNode* deleteRearLD(LinkedDeque* pDeque) {
     DequeNode *pNode = peekRearLD(pDeque);
     if (pNode != NULL) {
-        if (pDeque->currentElementCount == 1) {
+        if (pDeque->currentElementCount == 1)
             pDeque->pFrontNode = NULL;
-            // pDeque->pRearNode = NULL;
-        } else {
-            // pDeque->pRearNode = pNode->pLLink;
+        else
             pDeque->pRearNode->pRLink = NULL;
-        }
     }
     pDeque->pRearNode = pNode->pLLink;
     pNode->pLLink = NULL;
@@ -115,7 +109,7 @@ void displayLinkedDeque(LinkedDeque *pDeQue) {
     DequeNode *pNode = pDeQue->pFrontNode;
     printf("current count : %ld\n", len);
     for (size_t i = 0; i < len; i++) {
-        printf("Queue[%ld] = %c\n", i, pNode->data);
+        printf("Deque[%ld] = %c\n", i, pNode->data);
         pNode = pNode->pRLink;
     }
     free(pNode);
