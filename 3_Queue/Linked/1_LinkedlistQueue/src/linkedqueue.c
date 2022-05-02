@@ -22,6 +22,8 @@ int enqueueLQ(LinkedQueue* pQueue, QueueNode element) {
 QueueNode* dequeueLQ(LinkedQueue* pQueue) {
     QueueNode *pNode = pQueue->pFrontNode;
     if (isLinkedQueueEmpty(pQueue) == TRUE || !pQueue) return NULL;
+    // 노드가 1개일 때 마지막 노드의 연결을 제거한다.
+    if (pQueue->currentElementCount == 1) pQueue->pRearNode = NULL;
     pQueue->pFrontNode = pNode->pLink;
     pQueue->currentElementCount--;
     return pNode;
