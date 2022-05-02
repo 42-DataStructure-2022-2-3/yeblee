@@ -1,33 +1,72 @@
 #include "../include/linkedqueue.h"
 
 LinkedQueue* createLinkedQueue() {
-
+    LinkedQueue *pQueue = (LinkedQueue *)calloc(1, sizeof(LinkedQueue));
+    if (!pQueue) return NULL;
+    return pQueue;
 }
 
-int enqueueLD(LinkedQueue* pQueue, QueueNode element) {
+QueueNode* createLinkedQueueNode(char data) {
+    QueueNode *pNewNode;
 
+    pNewNode = (QueueNode *)calloc(1, sizeof(QueueNode));
+    if (!pNewNode) return NULL;
+    pNewNode->data = data;
+    return pNewNode;
 }
 
-QueueNode* dequeueLD(LinkedQueue* pQueue) {
-
+int enqueueLQ(LinkedQueue* pQueue, QueueNode element) {
+    QueueNode *pNode = createLinkedQueueNode(element.data);
+    if (!pQueue || !pNode) return FALSE;
+    if (isLinkedQueueEmpty(pQueue) == TRUE)
+        pQueue->pFrontNode = pNode;
+    else
+        pQueue->pRearNode->pLink = pNode;
+    pQueue->pRearNode = pNode;
+    // printf("ff?%c\n", pQueue->pRearNode->data);
+    pQueue->currentElementCount++;
+    return TRUE;
 }
 
-QueueNode* peekLD(LinkedQueue* pQueue) {
+QueueNode* dequeueLQ(LinkedQueue* pQueue) {
+    QueueNode *pNode = pQueue->pFrontNode;
+    if (isLinkedQueueEmpty(pQueue) == TRUE || !pQueue) return NULL;
+    pQueue->pFrontNode = pNode->pLink;
+    pQueue->currentElementCount--;
+    return pNode;
+}
 
+QueueNode* peekLQ(LinkedQueue* pQueue) {
+    return pQueue->pFrontNode;
 }
 
 void deleteLinkedQueue(LinkedQueue* pQueue) {
+    size_t len = pQueue->currentElementCount;
+    QueueNode *pNode = pQueue->pFrontNode;
+    QueueNode *pDelNode;
 
-}
-
-int isLinkedQueueFull(LinkedQueue* pQueue) {
-
+    for (int i = 0; i < len; i++) {
+        pDelNode = pNode;
+        free(pDelNode);
+        pNode = pNode->pLink;
+    }
+    free(pQueue);
 }
 
 int isLinkedQueueEmpty(LinkedQueue* pQueue) {
-
+    return (pQueue->currentElementCount == 0 ? TRUE : FALSE);
 }
 
 void displayLinkedQueue(LinkedQueue *pQueue) {
-
+    if (!pQueue) {
+        printf("Queue is NULL");
+        return ;
+    }
+    QueueNode *pNode = pQueue->pFrontNode;
+    printf("current count : %d\n", pQueue->currentElementCount);
+    for (int i = 0; i < pQueue->currentElementCount; i++) {
+        printf("Queue[%d] = %c\n", i, pNode->data);
+        pNode = pNode->pLink;
+    }
+    free(pNode);
 }

@@ -20,9 +20,10 @@ typedef struct LinkedQueueType
 } LinkedQueue;
 
 LinkedQueue* createLinkedQueue();
-int enqueueLD(LinkedQueue* pQueue, QueueNode element);
-QueueNode* dequeueLD(LinkedQueue* pQueue);
-QueueNode* peekLD(LinkedQueue* pQueue);
+QueueNode* createLinkedQueueNode(char data);
+int enqueueLQ(LinkedQueue* pQueue, QueueNode element);
+QueueNode* dequeueLQ(LinkedQueue* pQueue);
+QueueNode* peekLQ(LinkedQueue* pQueue);
 void deleteLinkedQueue(LinkedQueue* pQueue);
 int isLinkedQueueFull(LinkedQueue* pQueue);
 int isLinkedQueueEmpty(LinkedQueue* pQueue);
