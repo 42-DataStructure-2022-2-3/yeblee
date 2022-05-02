@@ -6,24 +6,15 @@ LinkedQueue* createLinkedQueue() {
     return pQueue;
 }
 
-QueueNode* createLinkedQueueNode(char data) {
-    QueueNode *pNewNode;
-
-    pNewNode = (QueueNode *)calloc(1, sizeof(QueueNode));
-    if (!pNewNode) return NULL;
-    pNewNode->data = data;
-    return pNewNode;
-}
-
 int enqueueLQ(LinkedQueue* pQueue, QueueNode element) {
-    QueueNode *pNode = createLinkedQueueNode(element.data);
+    QueueNode *pNode = (QueueNode *)calloc(1, sizeof(QueueNode));
     if (!pQueue || !pNode) return FALSE;
+    pNode->data = element.data;
     if (isLinkedQueueEmpty(pQueue) == TRUE)
         pQueue->pFrontNode = pNode;
     else
         pQueue->pRearNode->pLink = pNode;
     pQueue->pRearNode = pNode;
-    // printf("ff?%c\n", pQueue->pRearNode->data);
     pQueue->currentElementCount++;
     return TRUE;
 }

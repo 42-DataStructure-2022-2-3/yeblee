@@ -36,6 +36,8 @@ int main (void) {
     pNode = dequeueAQ(pQueue);
     printf("\ndequeueAQ : %c\n", pNode->data);
     free(pNode);
+    pQueue->front = 4;
+    pQueue->rear = 2;
     displayArrayQueue(pQueue);
     printf("\n====================================================================\n");
     deleteArrayQueue(pQueue);

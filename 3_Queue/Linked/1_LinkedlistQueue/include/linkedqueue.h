@@ -20,7 +20,6 @@ typedef struct LinkedQueueType
 } LinkedQueue;
 
 LinkedQueue* createLinkedQueue();
-QueueNode* createLinkedQueueNode(char data);
 int enqueueLQ(LinkedQueue* pQueue, QueueNode element);
 QueueNode* dequeueLQ(LinkedQueue* pQueue);
 QueueNode* peekLQ(LinkedQueue* pQueue);
