@@ -20,6 +20,7 @@ typedef struct LinkedDequeType
 } LinkedDeque;
 
 LinkedDeque* createLinkedDeque();
+DequeNode* createLinkedDequeNode(char data);
 int insertFrontLD(LinkedDeque* pDeque, DequeNode element);
 int insertRearLD(LinkedDeque* pDeque, DequeNode element);
 DequeNode* deleteFrontLD(LinkedDeque* pDeque);
@@ -27,8 +28,9 @@ DequeNode* deleteRearLD(LinkedDeque* pDeque);
 DequeNode* peekFrontLD(LinkedDeque* pDeque);
 DequeNode* peekRearLD(LinkedDeque* pDeque);
 void deleteLinkedDeque(LinkedDeque* pDeque);
-int isLinkedDequeFull(LinkedDeque* pDeque);
+// int isLinkedDequeFull(LinkedDeque* pDeque);
 int isLinkedDequeEmpty(LinkedDeque* pDeque);
+void displayLinkedDeque(LinkedDeque* pDeque);
 
 #endif //_LINKED_DEQUE_
 
