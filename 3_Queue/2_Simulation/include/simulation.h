@@ -1,17 +1,7 @@
 #ifndef _SIMULATION_
 #define _SIMULATION_
 
-typedef enum SimStatusType { arrival, start, end } SimStatus;
-
-typedef struct SimCustomerType
-{
-	SimStatus status;
-	int arrivalTime;	// 도착 시각
-	int serviceTime;	// 서비스 시간
-	int startTime;		// 시작 시각
-	int endTime;		// 종료 시각 : 시작 시각 + 서비스 시간
-} SimCustomer;
-
+#include "linkedqueue.h"
 
 void        insertCutomer(int arrivalTime, int processTime, LinkedQueue *pQueue);											// 고객 도착 큐에 고객 추가
 void        processArrival(int currentTime, LinkedQueue *pArrivalQueue, LinkedQueue *pWaitQueue);							// 고객 도착 처리

@@ -67,7 +67,7 @@ QueueNode* processServiceNodeEnd(int currentTime, QueueNode *pServiceNode, int *
 	return pReturn;
 }
 
-// 서비스 종료 처리
+// 서비스 종료 처리 : 새로운 서비스 시작
 QueueNode* processServiceNodeStart(int currentTime, LinkedQueue *pWaitQueue)
 {
 	QueueNode* pReturn = NULL;

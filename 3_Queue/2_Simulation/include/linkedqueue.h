@@ -1,7 +1,7 @@
 #ifndef _LINKED_QUEUE_
 #define _LINKED_QUEUE_
 
-#include "simulation.h"
+#include "simdef.h"
 
 typedef struct QueueNodeType
 {

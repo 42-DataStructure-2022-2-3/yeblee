@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../include/linkedqueue.h"
+#include "../include/simulation.h"
 
 LinkedQueue* createLinkedQueue()
 {
