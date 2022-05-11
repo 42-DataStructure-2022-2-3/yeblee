@@ -11,7 +11,7 @@
 |03|04-26|[스택](https://github.com/42-DataStructure-2022-2-3/yeblee/tree/main/2_Stack)|stack array와 linked list로 구현하기</br>역순 문자열 및 괄호 검사, 중위 표기법 후위 표기법으로변환|[jekim](https://github.com/42-DataStructure-2022-2-3/jekim)|
 |04|04-29|스택 응용|미로 구현하기|jekim|
 |05|05-03|[큐](https://github.com/42-DataStructure-2022-2-3/yeblee/tree/main/2_Queue)|queue, circluar queue, deque 구현하기|[yyoo](https://github.com/42-DataStructure-2022-2-3/yyoo)|
-|06||큐 응용|큐 시뮬레이션 프로그램||
+|06||큐 응용|큐 시뮬레이션 프로그램|yyoo|
 |07|05-10|[트리 개념](https://github.com/42-DataStructure-2022-2-3/yeblee/tree/main/4_Tree)|이진 트리 구현, 트리 순회하기|[yotak](https://github.com/42-DataStructure-2022-2-3/yotak)|
 |08||이진트리|BST, Heap 구현하기||
 |09||그래프|배열, 연결 리스트로 그래프 구현하기||
