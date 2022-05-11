@@ -12,7 +12,7 @@
 |04|04-29|스택 응용|미로 구현하기|jekim|
 |05|05-03|[큐](https://github.com/42-DataStructure-2022-2-3/yeblee/tree/main/2_Queue)|queue, circluar queue, deque 구현하기|[yyoo](https://github.com/42-DataStructure-2022-2-3/yyoo)|
 |06||큐 응용|큐 시뮬레이션 프로그램||
-|07||트리 개념|이진 트리 구현, 트리 순회하기||
+|07|05-10|[트리 개념](https://github.com/42-DataStructure-2022-2-3/yeblee/tree/main/4_Tree)|이진 트리 구현, 트리 순회하기|[yotak](https://github.com/42-DataStructure-2022-2-3/yotak)|
 |08||이진트리|BST, Heap 구현하기||
 |09||그래프|배열, 연결 리스트로 그래프 구현하기||
 |10||그래프|MST, Kruskal, Prim, Dijkstra, Floyd 알고리즘 구현하기||
